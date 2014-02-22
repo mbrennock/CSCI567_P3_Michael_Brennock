@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.media.SoundPool;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
@@ -23,11 +24,8 @@ public class AirplaneReceiver extends BroadcastReceiver {
 		if(I.getAction().equals(Intent.ACTION_AIRPLANE_MODE_CHANGED)) {
 			Log.d(TAG, "Airplane Changed");
 			sendNotification(c, "Airplane Changed");
-			//airplaneChanged(I);
 		}
 	}
-	
-	//public void airplaneChanged(Intent intent) { 	}
 	
 	public void sendNotification(Context c, String msg) {
 		m_NotificationManager = (NotificationManager)c.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -40,7 +38,6 @@ public class AirplaneReceiver extends BroadcastReceiver {
 					.setContentTitle(c.getString(R.string.airplane_alert))
 					.setStyle(new NotificationCompat.BigTextStyle().bigText(msg))
 					.setContentText(msg);
-		
 		
 		m_Builder.setContentIntent(contentIntent);
 		m_NotificationManager.notify(NOTIFICATION_ID, m_Builder.build());
