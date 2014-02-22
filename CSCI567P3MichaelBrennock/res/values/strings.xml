@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CSCI567 P3 Michael Brennock</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Program 3</string>
+    <string name="airplane_alert">Airplane Mode Changed</string>
+
+</resources>
